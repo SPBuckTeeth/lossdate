@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="exsolider.dao.UserDao">
+
+	<!-- 根据用户名查询用户 -->
+	<select id="findUserByName" parameterType="string" resultType="exsolider.entity.User">
+		select
+			loss_id as id,
+			loss_name as userName,
+			loss_password as password,
+			loss_token as token,
+			loss_nick as nickName,
+			loss_mailAddr as mailAddress
+		from
+			UserInfo
+		where
+			loss_name = #{userName}
+	</select>
+
+	<!-- 保存用户 -->
+	<insert id="saveUser" parameterType="exsolider.entity.User" >
+		insert into UserInfo (
+			loss_id,
+			loss_name,
+			loss_password,
+			loss_token,
+			loss_nick,
+			loss_mailAddr
+		) values (
+			#{id},
+			#{userName},
+			#{password},
+			#{token},
+			#{nickName},
+			#{mailAddress}
+		)
+
+	</insert>
+
+	<select id="findUserById" parameterType="string" resultType="exsolider.entity.User">
+		select
+			loss_id as id,
+			loss_name as userName,
+			loss_password as password,
+			loss_token as token,
+			loss_nick as nickName
+			loss_mailAddr as mailAddress
+		from
+			UserInfo
+		where
+			loss_id = #{id}
+	</select>
+
+</mapper>
+
+
+
+
+
+

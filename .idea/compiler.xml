@@ -10,7 +10,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="lossD" target="1.5" />
       <module name="lossdate" target="1.5" />
     </bytecodeTargetLevel>
   </component>

@@ -9,8 +9,5 @@
         <module name="lossdate" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="lossdate" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>
